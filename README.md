@@ -1,19 +1,16 @@
 # Manager
+[![Build Status](https://travis-ci.org/VaheSaroyan/seomanager.svg?branch=master)](https://travis-ci.org/VaheSaroyan/seomanager.svg?branch=master)
+> Statistics
+[![Latest Stable Version](https://poser.pugx.org/seo/manager/v/stable)](https://packagist.org/packages/seo/manager)
+[![Total Downloads](https://poser.pugx.org/seo/manager/downloads)](https://packagist.org/packages/seo/manager)
+[![License](https://poser.pugx.org/seo/manager/license)](https://packagist.org/packages/seo/manager)
+[![Latest Unstable Version](https://poser.pugx.org/seo/manager/v/unstable)](https://packagist.org/packages/seo/manager)
+[![Monthly Downloads](https://poser.pugx.org/seo/manager/d/monthly)](https://packagist.org/packages/seo/manager)
+[![Daily Downloads](https://poser.pugx.org/seo/manager/d/daily)](https://packagist.org/packages/seo/manager)
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
-
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
 
 ## Structure
 
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
 
 ```       
 src/
@@ -120,7 +117,6 @@ If you discover any security related issues, please email vahe.saroyan.web@gmail
 ## Credits
 
 - [Vahe Saroyan][link-author]
-- [All Contributors][link-contributors]
 
 ## License
 
@@ -128,12 +124,12 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/Seo/Manager.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/Seo/Manager/master.svg?style=flat-square
+[ico-travis]: https://travis-ci.org/VaheSaroyan/seo.svg?branch=master
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Seo/Manager.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/Seo/Manager.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/Seo/Manager.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/Seo/Manager
+[link-packagist]: https://packagist.org/packages/seo/manager
 [link-travis]: https://travis-ci.org/Seo/Manager
 [link-scrutinizer]: https://scrutinizer-ci.com/g/Seo/Manager/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/Seo/Manager
