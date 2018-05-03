@@ -14,6 +14,7 @@ class CreateLaravelSeoManagersTable extends Migration
     public function up()
     {
         Schema::create('laravel_seo_managers', function (Blueprint $table) {
+
             $table->increments('id');
             $table->text('page')->nullable();
             $table->text('title')->nullable();
