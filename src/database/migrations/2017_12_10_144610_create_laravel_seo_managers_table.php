@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSeoManagerTable extends Migration
+class CreateLaravelSeoManagersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSeoManagerTable extends Migration
      */
     public function up()
     {
-        Schema::create('seo_manager', function (Blueprint $table) {
+        Schema::create('laravel_seo_managers', function (Blueprint $table) {
             $table->increments('id');
             $table->text('page')->nullable();
             $table->text('title')->nullable();
@@ -37,6 +37,6 @@ class CreateSeoManagerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seo_manager');
+        Schema::dropIfExists('laravel_seo_managers');
     }
 }
