@@ -23,9 +23,9 @@ class CreateLaravelSeoManagersTable extends Migration
             $table->string('url')->nullable();
             $table->string('opegraph_type',50)->nullable();
             $table->string('locale',15)->nullable();
-            $table->json('locales');
             $table->string('canonical')->nullable();
             $table->tinyInteger('aws_s3')->default(0);
+            $table->json('locales');
             $table->timestamps();
         });
     }
