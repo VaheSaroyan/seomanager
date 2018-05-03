@@ -1,7 +1,7 @@
 var settingAdminButton = document.querySelector('#settingAdminButton'),
     seoManagerSetting = document.querySelector('#SeoManagerSetting'),
     saveChanges = document.querySelector('#saveChanges'),
-    adminContainer = document.getElementsByClassName('seo_manager_setting_admin'),
+    adminContainer = document.getElementsByClassName('seo_manager_setting_div'),
     inputTypeFile = document.getElementsByClassName('seo_manager_hidden'),
     seoManagerImage = document.getElementsByClassName('seo_manager_image'),
     seoForm = document.getElementById('seo_manager_form'),
@@ -216,7 +216,7 @@ var settingAdminButton = document.querySelector('#settingAdminButton'),
     };
 
 function xhrRequest() {
-    xhr.open('GET', `/seo-manager-get-page-meta?uri=${uriPage.value}`, false);
+    xhr.open('GET', `/seo-manager/seo/manager/get-page-meta?uri=${uriPage.value}`, false);
     xhr.send();
     if (xhr.status === 200) {
         var response = JSON.parse(xhr.responseText);
@@ -300,48 +300,34 @@ function initRequestData(response) {
     img = seoManagerImage[0];
     img.src = response['image'];
     img = seoManagerImage[1];
-    if (response.hasOwnProperty('meta_description')) {
-        seoForm.querySelector(`textarea[name=meta_description]`).value = response['meta_description'];
-    }
-    if (response.hasOwnProperty('title')) {
-        seoForm.querySelector(`textarea[name=title]`).value = response['title'];
-    }
-    if (response.hasOwnProperty('canonical')) {
-        seoForm.querySelector(`input[name=canonical]`).value = response['canonical'];
-    }
-    if (response['user_info'].hasOwnProperty('facebook')) {
-        settingForm.querySelector(`input[name=facebook]`).value = response['user_info']['facebook'];
-    }
-    if (response['user_info'].hasOwnProperty('cloud_front_url')) {
-        settingForm.querySelector(`input[name=cloud_front_url]`).value = response['user_info']['cloud_front_url'];
-    }
-    if (response['user_info'].hasOwnProperty('twitter_site')) {
-        settingForm.querySelector(`input[name=twitter_site]`).value = response['user_info']['twitter_site'];
-    }
-    if (response['user_info'].hasOwnProperty('user_name')) {
-        settingForm.querySelector(`input[name=user_name]`).value = response['user_info']['user_name'];
-    }
-    if (response['user_info'].hasOwnProperty('user_surname')) {
-        settingForm.querySelector(`input[name=user_surname]`).value = response['user_info']['user_surname'];
-    }
-    if (response.hasOwnProperty('opegraph_type')) {
-        selectType.value = response['opegraph_type'];
-    }
-    if (response.hasOwnProperty('locale')) {
-        selectLocales.value = response['locale'];
+
+    for (var item in response) {
+        if (response.hasOwnProperty(item)) {
+            if (item != 'image' && seoForm.querySelector(`[name=${item}]`)){
+                seoForm.querySelector(`[name=${item}]`).value = response[item]
+            }
+        }
     }
 
     if (response.hasOwnProperty('locales')) {
-        selectLocalesAlternateOptions[0].selected = false;
         for (var opt in selectLocalesAlternateOptions) {
             if (response['locales'].includes(selectLocalesAlternateOptions[opt].value)) {
                 selectLocalesAlternateOptions[opt].selected = true
             }
         }
+        selectLocalesAlternateOptions[0].removeAttribute('selected');
+
     }
     if (response['aws_s3'] === 1) {
         swicher.setAttribute("checked", "true");
         swicher.value = response['aws_s3']
+    }
+    if (response.hasOwnProperty('user_info')) {
+        for (var item in response['user_info']) {
+            if (item !== 'image') {
+                settingForm.querySelector(`input[name=${item}]`).value = response['user_info'][item];
+            }
+        }
     }
     if (response['user_info'].hasOwnProperty('image')) {
         img.src = response['user_info']['image'];
@@ -404,7 +390,7 @@ deleteMetasButton.onclick = function () {
 }
 swicher.onclick = function () {
 
-        if (this.checked && confirm(`Change aws s3 cloud?Have you set aws s3;for set up https://aws.amazon.com/s3/?nc1=h_ls`)) {
+    if (this.checked && confirm(`Change aws s3 cloud?Have you set aws s3;for set up https://aws.amazon.com/s3/?nc1=h_ls`)) {
         this.setAttribute("checked", "true");
         this.value = 1;
     } else {

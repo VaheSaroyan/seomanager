@@ -36,21 +36,27 @@ class Manager extends Model
      */
     public function getImageAttribute($value)
     {
+
         if ($value) {
             if ($this->aws_s3 === 1) {
+
                 if (file_exists(public_path('/vendor/seo_manager/seo_manager.json'))) {
                     $userInfo = json_decode(file_get_contents(public_path('/vendor/seo_manager/seo_manager.json')), true);
                 }
                 if (isset($userInfo['cloud_front_url'])) {
+
                     return $userInfo['cloud_front_url'] . "/$value";
                 }
                 try{
+
                      return Storage::disk('s3')->url($value);
                 }catch (\Exception $exception){
+
                     return asset('/vendor/seo_manager/images/seo-manager-no-image.jpg');
                 }
 
             }
+
             return Storage::disk('')->url($value);
         }
 
