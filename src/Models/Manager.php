@@ -13,7 +13,7 @@ class Manager extends Model
      */
     protected $primaryKey = 'id';
     protected $casts = [
-        'locales' => []
+        'locales' => 'array'
     ];
     /**
      * @var array

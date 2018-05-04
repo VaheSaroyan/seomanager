@@ -47,12 +47,14 @@
                 </div>
             </div>
 
-            <div class="seo_manager_form_group {{ $errors->has('meta_description') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
+            <div
+                class="seo_manager_form_group {{ $errors->has('meta_description') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
                 {!! Form::label('meta_description', 'Meta Description', ['class' => 'control-label seo_manager_labels']) !!}
                 {!! Form::textarea('meta_description', null, ['class' => 'seo_manager_form_control materialize-textarea']) !!}
                 {!! $errors->first('meta_description', '<p class="help-block">:message</p>') !!}
             </div>
-            <div class="seo_manager_form_group {{ $errors->has('image') ? 'has-error' : ''}} seo_manager_p_4 input-field">
+            <div
+                class="seo_manager_form_group {{ $errors->has('image') ? 'has-error' : ''}} seo_manager_p_4 input-field">
                 <img class="seo_manager_image materialboxed">
                 <input type="file" name="image" width="150" class="seo_manager_hidden">
                 <button class="waves-effect waves-light btn btn-small seo_manager_btn_w_100_cp"
@@ -87,7 +89,8 @@
                     </label>
                 </div>
             </div>
-            <div class="seo_manager_form_group_h40 {{ $errors->has('canonical') ? 'has-error' : ''}}  seo_manager_p_4 input-field seo_manager_w25">
+            <div
+                class="seo_manager_form_group_h40 {{ $errors->has('canonical') ? 'has-error' : ''}}  seo_manager_p_4 input-field seo_manager_w25">
                 {!! Form::label('canonical', 'Canonical', ['class' => 'control-label seo_manager_labels']) !!}
                 {!! Form::text('canonical', null, ['class' => 'seo_manager_form_control seo_manager_mt_10']) !!}
                 {!! $errors->first('canonical', '<p class="help-block">:message</p>') !!}
@@ -119,12 +122,14 @@
                     </div>
                 </div>
                 <div class="seo_manager_form_group_setting">
-                    <div class="seo_manager_form_group_setting_h40_f100 {{ $errors->has('user_name') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
+                    <div
+                        class="seo_manager_form_group_setting_h40_f100 {{ $errors->has('user_name') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
                         {!! Form::label('user_name', 'Your Name', ['class' => 'control-label seo_manager_labels']) !!}
                         {!! Form::text('user_name', null, ['class' => 'seo_manager_form_control','placeholder'=>'Seo']) !!}
                         {!! $errors->first('user_name', '<p class="help-block">:message</p>') !!}
                     </div>
-                    <div class="seo_manager_form_group_setting_h40_f100 {{ $errors->has('user_surname') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
+                    <div
+                        class="seo_manager_form_group_setting_h40_f100 {{ $errors->has('user_surname') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
                         {!! Form::label('user_surname', 'Your Surname', ['class' => 'control-label seo_manager_labels']) !!}
                         {!! Form::text('user_surname', null, ['class' => 'seo_manager_form_control','placeholder'=>'Manger']) !!}
                         {!! $errors->first('user_surname', '<p class="help-block">:message</p>') !!}
@@ -135,20 +140,23 @@
             <div class="seo_manager_width_50">
                 <h6 class="seo_manager_user_info">Other Options</h6>
 
-                <div class="seo_manager_form_group_setting_h40 {{ $errors->has('twitter_site') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
+                <div
+                    class="seo_manager_form_group_setting_h40 {{ $errors->has('twitter_site') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
                     {!! Form::label('twitter_site', 'Twitter', ['class' => 'control-label seo_manager_labels']) !!}
                     {!! Form::text('twitter_site', null, ['class' => 'seo_manager_form_control','placeholder'=>'@SeoManger']) !!}
                     {!! $errors->first('twitter_site', '<p class="help-block">:message</p>') !!}
                 </div>
 
 
-                <div class="seo_manager_form_group_setting_h40 {{ $errors->has('facebook') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
+                <div
+                    class="seo_manager_form_group_setting_h40 {{ $errors->has('facebook') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
                     {!! Form::label('facebook', 'Facebook', ['class' => 'control-label seo_manager_labels']) !!}
                     {!! Form::text('facebook', null, ['class' => 'seo_manager_form_control','placeholder'=>'https://www.facebook.com/seo-manger']) !!}
                     {!! $errors->first('facebook', '<p class="help-block">:message</p>') !!}
                 </div>
 
-                <div class="seo_manager_form_group_setting_h40 {{ $errors->has('cloud_front_url') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
+                <div
+                    class="seo_manager_form_group_setting_h40 {{ $errors->has('cloud_front_url') ? 'has-error' : ''}}  seo_manager_p_4 input-field">
                     {!! Form::label('cloud_front_url', 'CLOUDFRONT URL', ['class' => 'control-label seo_manager_labels']) !!}
                     {!! Form::text('cloud_front_url', null, ['class' => 'seo_manager_form_control','placeholder'=>'https://seoMnager.cloudfront.net']) !!}
                     {!! $errors->first('cloud_front_url', '<p class="help-block">:message</p>') !!}
@@ -165,5 +173,4 @@
 
 <div class="seo_manager_loader_container" id="loader"><span class="seo_manager_image_loader"></span></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-<script src="{{ asset('/vendor/seo_manager/js/functions.js') }}"></script>
-
+<script src="{{ asset('/vendor/seo_manager/js/functions.prod.js') }}"></script>

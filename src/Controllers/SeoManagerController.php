@@ -82,6 +82,7 @@ class SeoManagerController extends Controller implements SeoManager
 
             }
             $response['user_info'] = $userInfo;
+
             return $response;
         }
         return ['image' => asset('/vendor/seo_manager/images/seo-manager-no-image.jpg'), 'delete_field' => false, 'user_info' => $userInfo];
